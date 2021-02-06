@@ -147,7 +147,7 @@ namespace KEKBeterPhoto.ImageControl
             using (FileStream file = File.OpenWrite(fileName))
             {
                 encoder.Save(file);
-            }
+            }   
         }
 
         #endregion
