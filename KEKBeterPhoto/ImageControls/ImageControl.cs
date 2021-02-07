@@ -7,6 +7,9 @@ using System.IO;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Media;
+using KEKBeterPhoto.ImageControls.SaveImageMetods;
+using KEKBeterPhoto.ImageControls.ProccessingMetods;
+using KEKBeterPhoto.ImageControls.SizeImageMetods;
 
 namespace KEKBeterPhoto.ImageControl
 {
@@ -70,88 +73,8 @@ namespace KEKBeterPhoto.ImageControl
          
         }
 
-        #region ProssedImageMetods
 
-        private void MedianFilterMetod() //MedianFilter 
-        {
-
-        }
-
-        private void HSVMetod() //HSV 
-        {
-
-        }
-
-        private void СorrectionValueControllersMetod() //СorrectionValueControllers 
-        {
-
-        }
-
-        private void BilateralFilterMetod() //BilateralFilter 
-        {
-
-        }
-
-        private void SpectralRepresentationOfASignalMetod() //SpectralRepresentationOfASignal 
-        {
-
-        }
-
-        private void DominantDirectionMetod() //DominantDirection 
-        {
         
-        }
-
-        private void LocalClassificationOfFragmentsMetod() //LocalClassificationOfFragments 
-        {
-
-        }
-
-        private void EffectiveCompressionMetod() //EffectiveCompression 
-        {
-
-        }
-
-        #endregion
-
-        #region SizeImageMetods
-
-        public void X2ResizingMetod() 
-        {
-
-        }
-
-        #endregion
-
-        #region SaveProssedMetods
-
-        private void SaveClipboardImageToPNGFile(string filePath) //Save us PNG format
-        {
-            var image = Clipboard.GetImage();
-            using (var fileStream = new FileStream(filePath, FileMode.Create))
-            {
-                BitmapEncoder encoder = new PngBitmapEncoder();
-                encoder.Frames.Add(BitmapFrame.Create(image));
-                encoder.Save(fileStream);
-            }
-        }
-
-        private void SaveClipboardImageToJPEGFile(string fileName, int quality, BitmapSource bmp)
-        {
-
-            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-            BitmapFrame outputFrame = BitmapFrame.Create(bmp);
-            encoder.Frames.Add(outputFrame);
-            encoder.QualityLevel = quality;
-
-            using (FileStream file = File.OpenWrite(fileName))
-            {
-                encoder.Save(file);
-            }   
-        }
-
-        #endregion
-
         #region ProcessingBitmapMetod
 
         private BitmapSource ImageJpegOpen(ImageModel imageModel) // Open a Stream and decode a JPEG image

@@ -17,17 +17,23 @@ namespace KEKBeterPhoto
         {
             var services = new ServiceCollection();
 
-            //My ViewModels
+            #region ViewModels //My ViewModels
+
             services.AddTransient<MainViewModel>();
             //services.AddTransient<FirstOpenPageViewModel>();
             //services.AddTransient<FunktionMenuKekPLayerPageViewModel>();
             //services.AddTransient<TrackOnAirPageViewModel>();
 
+            #endregion
 
-            // My service
+            #region Service // My service
+
             services.AddSingleton<NavigationService>();
             //services.AddSingleton<EventBus>();
             //services.AddSingleton<MessageBus>();
+
+
+            #endregion
 
             _provaider = services.BuildServiceProvider();
 
