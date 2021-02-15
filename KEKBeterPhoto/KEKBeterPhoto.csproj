@@ -12,4 +12,10 @@
     <PackageReference Include="PropertyChanged.Fody" Version="3.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="System.Drawing.Common">
+      <HintPath>bin\Debug\netcoreapp3.1\System.Drawing.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

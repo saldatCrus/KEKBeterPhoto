@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using KEKBeterPhoto.Models;
 
 namespace KEKBeterPhoto.ImageControls
 {
     interface IProccessingStrategy
     {
-        void ProccessingWork();
+        List<Pixel> ProccessingWork(List<Pixel> pixels);
     }
 }

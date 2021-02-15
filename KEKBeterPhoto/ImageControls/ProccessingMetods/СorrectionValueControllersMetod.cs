@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using KEKBeterPhoto.Models;
 
 namespace KEKBeterPhoto.ImageControls.ProccessingMetods
 {
     class СorrectionValueControllersMetod : IProccessingStrategy
     {
-        public void ProccessingWork() 
+        public List<Pixel> ProccessingWork(List<Pixel> pixels)
         {
-
+            return pixels;
         }
     }
 }
