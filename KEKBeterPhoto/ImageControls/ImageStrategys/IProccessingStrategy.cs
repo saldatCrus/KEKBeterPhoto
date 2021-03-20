@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using KEKBeterPhoto.Models;
 
-namespace KEKBeterPhoto.ImageControls
+namespace KEKBeterPhoto.ImageControls.ImageStrategys
 {
     interface IProccessingStrategy
     {

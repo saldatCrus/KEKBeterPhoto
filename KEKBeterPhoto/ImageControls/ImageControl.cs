@@ -10,46 +10,16 @@ using System.Windows.Media;
 using KEKBeterPhoto.ImageControls.SaveImageMetods;
 using KEKBeterPhoto.ImageControls.ProccessingMetods;
 using KEKBeterPhoto.ImageControls.SizeImageMetods;
+using KEKBeterPhoto.ImageControls.ImageStrategys;
+using KEKBeterPhoto.ImageControls.StrategyContexts;
+using KEKBeterPhoto.Enums;
 using KEKBeterPhoto.ImageControls;
 using System.Drawing;
 
 namespace KEKBeterPhoto.ImageControl
 {
     class ImageControl
-    {
-        #region Veriabels
-        public enum ProccessingMetod //vnj
-        {
-            NoPrccening,
-            MedianFilter,
-            HSV,
-            СorrectionValueControllers,
-            BilateralFilter,
-            SpectralRepresentationOfASignal,
-            DominantDirection,
-            LocalClassificationOfFragments,
-            EffectiveCompression
-        };
-
-        public enum SizeImageMetod
-        {
-            NoResizing,
-            X2Resizing
-        };
-
-        public enum SaveImageMetod
-        {
-            SaveUsPNG,
-            SaveUsJPEG,
-            SaveUsBMP,
-            SaveUsTGA
-
-        };
-
-
-        #endregion
-
-        
+    {       
         #region Constructors
 
         public ProccessingMetod _ProccessingMetod { get; set; }
@@ -65,14 +35,16 @@ namespace KEKBeterPhoto.ImageControl
         private List<Pixel> pixels { get; set; } = new List<Pixel>();
 
         #endregion
-
+        /// <summary>
+        /// Метод для выбора метода обработки изображения
+        /// </summary>
         public ImageControl(ImageModel imageModel, ProccessingMetod processingMetod, SizeImageMetod sizeImageMetod, SaveImageMetod saveImageMetod)
         {
             #region class
 
             var RawImageBitmap = new Bitmap(imageModel.ImageSource);
 
-            var ImageProccesing = new ImageProccessing();
+            var ImageProccesing = new ProccessingContext();
 
             #endregion
 
@@ -129,6 +101,9 @@ namespace KEKBeterPhoto.ImageControl
         //    return decoder.Frames[0];
         //}
 
+        /// <summary>
+        /// Метод для конвертацйи битмапа в пиксели
+        /// </summary>
         private List<Pixel> GetPixels(Bitmap RawImageBitmap) 
         {
             var pixels = new List<Pixel>(RawImageBitmap.Width * RawImageBitmap.Height);

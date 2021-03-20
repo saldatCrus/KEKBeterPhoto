@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Media.Imaging;
+using KEKBeterPhoto.ImageControls.ImageStrategys;
 
 namespace KEKBeterPhoto.ImageControls.SaveImageMetods
 {

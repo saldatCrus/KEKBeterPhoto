@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Media.Imaging;
-using KEKBeterPhoto.ImageControl;
+using KEKBeterPhoto.ImageControls.ImageStrategys;
 
 namespace KEKBeterPhoto.ImageControls.SaveImageMetods
 {

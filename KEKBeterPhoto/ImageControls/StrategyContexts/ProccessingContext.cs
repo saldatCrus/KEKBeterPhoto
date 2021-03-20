@@ -4,13 +4,13 @@ using System.Text;
 using KEKBeterPhoto.Models;
 using System.Threading.Tasks;
 using System.Linq;
+using KEKBeterPhoto.ImageControls.ImageStrategys;
 
-namespace KEKBeterPhoto.ImageControls
+namespace KEKBeterPhoto.ImageControls.StrategyContexts
 {
-    class ImageProccessing
+    class ProccessingContext
     {
         public List<Pixel> DoProccessing(IProccessingStrategy proccessingStrategy, List<Pixel> pixels) 
-
         {
             if(proccessingStrategy != null) 
             {
